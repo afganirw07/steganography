@@ -10,6 +10,7 @@ function previewDecodeImage() {
   });
 }
 
+
 function previewEncodeImage() {
   var file = document.querySelector("input[name=baseFile]").files[0];
 
@@ -49,6 +50,14 @@ function previewImage(file, canvasSelector, callback) {
 }
 
 function encodeMessage() {
+
+  if ($("textarea.message").val() == "") {
+    $(".error").fadeIn();
+    window.alert("Please enter a message");
+    return;
+  }
+
+
   $(".error").hide();
   $(".binary").hide();
 
