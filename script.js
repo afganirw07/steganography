@@ -141,6 +141,15 @@ function encodeMessage() {
   $(".images .message").fadeIn();
 };
 
+function downloadImage() {
+  var $canvas = $('.message canvas');
+  var canvas = $canvas[0];
+  var link = document.createElement('a');
+  link.download = 'image.png';
+  link.href = canvas.toDataURL();
+  link.click();
+}
+
 function decodeMessage() {
   var $originalCanvas = $('.decode canvas');
   var originalContext = $originalCanvas[0].getContext("2d");
